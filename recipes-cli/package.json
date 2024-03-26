@@ -1,12 +1,21 @@
 {
-  "name": "note-cli",
+  "name": "recipes-cli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "recipe": "./index.js"
+  },
+  "type": "module",
   "keywords": [],
   "author": "Hee Chan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.2.1",
+    "uuid": "^9.0.1",
+    "yargs": "^17.7.2"
+  }
 }
