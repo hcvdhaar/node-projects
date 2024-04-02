@@ -1,12 +1,14 @@
 {
   "recipes": [
     {
-      "title": "pizza",
-      "tags": [
-        "vegetarian",
-        "meat"
-      ],
-      "id": "3e8b1f03-8e10-49e7-b6e8-f54c8acf5c13"
+      "title": "pizza salami",
+      "tags": ["salami", "spicy"],
+      "id": "325faa5c-2b0d-4116-9652-7c2fce1f1fc1"
+    },
+    {
+      "title": "salad",
+      "tags": ["veggie", "healthy"],
+      "id": "0a289771-94e4-45b2-88d3-393bbf2ea26a"
     }
   ]
 }

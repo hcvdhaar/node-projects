@@ -1,7 +1,11 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { Recipe } from './models/recipe.model.js';
-import { initDB, createEntry } from './db.js';
+import { initDB } from './db.js';
+import { updateRecipeCommand } from './commands/update-recipe.js';
+import { deleteRecipeCommand } from './commands/delete-recipe.js';
+import { createRecipeCommand } from './commands/create-recipe.js';
+import { getAllRecipesCommand } from './commands/get-recipes.js';
+import { getRecipeCommand } from './commands/get-recipe.js';
 
 yargs(hideBin(process.argv))
   .command({
@@ -11,32 +15,9 @@ yargs(hideBin(process.argv))
       await initDB();
     },
   })
-  .command({
-    command: 'new <title>',
-    aliasses: ['n'],
-    desc: 'Create a new recipe',
-    builder: (yargs) => {
-      yargs.option('tags', {
-        alias: 't',
-        type: 'array',
-        description: 'Add tags to the recipe',
-      });
-
-      return yargs.positional('title', {
-        describe: 'The title of the recipe',
-        type: 'string',
-      });
-    },
-    handler: async (argv) => {
-      const { title, tags } = argv;
-      const recipe = new Recipe(title, tags);
-
-      try {
-        await createEntry('recipes', recipe);
-        console.log('Recipe created successfully');
-      } catch (error) {
-        console.error('Failed to create recipe', error);
-      }
-    },
-  })
+  .command(getAllRecipesCommand)
+  .command(getRecipeCommand)
+  .command(createRecipeCommand)
+  .command(updateRecipeCommand)
+  .command(deleteRecipeCommand)
   .parse();
