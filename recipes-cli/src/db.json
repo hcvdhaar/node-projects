@@ -2,13 +2,32 @@
   "recipes": [
     {
       "title": "pizza salami",
-      "tags": ["salami", "spicy"],
+      "tags": [
+        "salami",
+        "spicy"
+      ],
       "id": "325faa5c-2b0d-4116-9652-7c2fce1f1fc1"
     },
     {
       "title": "salad",
-      "tags": ["veggie", "healthy"],
+      "tags": [
+        "veggie",
+        "healthy"
+      ],
       "id": "0a289771-94e4-45b2-88d3-393bbf2ea26a"
+    },
+    {
+      "title": "sandwich",
+      "tags": [
+        "tuna",
+        "fish"
+      ],
+      "id": "8a9de9b3-8e20-4778-a845-838abe785a9b"
+    },
+    {
+      "title": "burger",
+      "tags": [],
+      "id": "af7f4b69-9cac-47eb-afe7-5fbc28f37b7f"
     }
   ]
 }
