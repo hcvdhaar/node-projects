@@ -1,7 +1,5 @@
-import { createEntry } from '../db.js';
+import { createRecipe } from '../recipe-controller.js';
 import { Recipe } from '../models/recipe.model.js';
-
-const TABLE_KEY = 'recipes';
 
 export const createRecipeCommand = {
   command: 'add <title>',
@@ -24,7 +22,7 @@ export const createRecipeCommand = {
     const recipe = new Recipe(title, tags);
 
     try {
-      await createEntry(TABLE_KEY, recipe);
+      await createRecipe(recipe);
       console.log('Recipe created successfully');
     } catch (error) {
       console.error('Failed to create recipe', error);
